@@ -80,5 +80,13 @@ public class Container {
         return current;
     }
 
+    void print() {
+        Node current = head;
+
+        while (current != null) {
+            System.out.println(current.item);
+            current = current.next;
+        }
+    }
 
 }
