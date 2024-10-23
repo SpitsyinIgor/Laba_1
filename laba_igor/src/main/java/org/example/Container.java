@@ -71,4 +71,14 @@ public class Container {
         return true;
     }
 
+    Node get(int item) {
+        Node current = head;
+        while (current != null && current.item != item) {
+            current = current.next;
+        }
+
+        return current;
+    }
+
+
 }
