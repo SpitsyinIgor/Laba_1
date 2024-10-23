@@ -20,4 +20,8 @@ public class Container {
     Container(int... items) {
         for (int item : items) add(item);
     }
+
+        boolean is_empty() {
+        return (head == null);
+    }
 }
