@@ -40,5 +40,35 @@ public class Container {
             current.next = newNode;
         }
     }
-    
+
+    boolean remove(int item) {
+        if (is_empty()) {
+            return false;
+        } else if (item == head.item) {
+            head = head.next;
+
+            if (!is_empty()) {
+                head.previous = null;
+            }
+
+            return true;
+        } else {
+            Node current = head.next;
+
+            while (current != null && current.item != item) {
+                current = current.next;
+            }
+            if (current == null) {
+                return false;
+            }
+
+            current.previous.next = current.next;
+            if (current.next != null) {
+                current.next.previous = current.previous;
+            }
+        }
+
+        return true;
+    }
+
 }
