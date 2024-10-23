@@ -21,7 +21,24 @@ public class Container {
         for (int item : items) add(item);
     }
 
-        boolean is_empty() {
+    boolean is_empty() {
         return (head == null);
     }
+
+    void add(int item) {
+        Node current = head;
+
+        if (is_empty()) {
+            head = new Node(item);
+        } else {
+            while (current.next != null) {
+                current = current.next;
+            }
+
+            Node newNode = new Node(item);
+            newNode.previous = current;
+            current.next = newNode;
+        }
+    }
+    
 }
